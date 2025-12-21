@@ -204,6 +204,40 @@
         #card-case-study {
             grid-column: span 2;
             grid-row: span 1;
+            display: flex; /* Flex layout to support columns */
+            gap: 20px;
+        }
+
+        .case-study-content {
+            flex: 1;
+        }
+
+        .case-study-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid var(--color-border);
+            padding-left: 20px;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 77, 153, 0.2);
+        }
+
+        .btn-action:hover {
+            background-color: #003366;
+            transform: translateY(-2px);
+            color: #FFFFFF;
         }
 
         /* Card 5 (Hobby): Small box (1x1) */
@@ -256,6 +290,17 @@
                 grid-column: 1 / -1 !important; 
                 grid-row: auto !important; 
             }
+
+            #card-case-study {
+                flex-direction: column;
+            }
+
+            .case-study-action {
+                border-left: none;
+                border-top: 1px solid var(--color-border);
+                padding-left: 0;
+                padding-top: 20px;
+            }
             
             .large-text {
                 font-size: 2rem; 
@@ -302,12 +347,17 @@
         </div>
         
         <div id="card-case-study" class="bento-card">
-            <p class="card-subheader">Academic Focus</p>
-            <p class="card-title">Starch Gelatinization in Local Kuih</p>
-            <p class="card-detail">
-                Analyzing the texture profiles and structural changes involved in the starch gelatinization process of traditional Malaysian desserts like *Kuih Lapis*.
-            </p>
-            <p class="card-detail" style="margin-top: 15px;"><span class="accent-text">Discipline:</span> Food Chemistry & Rheology</p>
+            <div class="case-study-content">
+                <p class="card-subheader">Academic Focus</p>
+                <p class="card-title">Starch Gelatinization in Local Kuih</p>
+                <p class="card-detail">
+                    Analyzing the texture profiles and structural changes involved in the starch gelatinization process of traditional Malaysian desserts like *Kuih Lapis*.
+                </p>
+                <p class="card-detail" style="margin-top: 15px;"><span class="accent-text">Discipline:</span> Food Chemistry & Rheology</p>
+            </div>
+            <div class="case-study-action">
+                <a href="https://s78665.github.io/focus-timer-app/app.html" target="_blank" class="btn-action">Try My Focus Timer App</a>
+            </div>
         </div>
 
         <div id="card-hobby" class="bento-card">
@@ -331,13 +381,13 @@
         <div id="card-playlist" class="bento-card">
             <p class="card-subheader">Current Jam</p>
             <p class="card-title">Chill R&B for Focus</p>
-            <p class="card-detail">
+            <div class="card-detail">
                 <iframe style="border-radius:12px"
 src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?ut
 m_source=generator&theme=0" width="100%" height="152" frameBorder="0"
 allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media;
 fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </p>
+            </div>
             <a href="#" class="accent-text" style="font-weight: 700;">Open Study Playlist on YouTube Music</a>
         </div>
 
